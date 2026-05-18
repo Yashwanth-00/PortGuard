@@ -1,0 +1,593 @@
+2026-05-19 03:08:07  INFO      portguard — PortGuard starting — CLI mode
+2026-05-19 03:08:07  INFO      portguard — Scan interval: 5s | Dashboard: enabled
+2026-05-19 03:08:07  INFO      portguard.threat — ThreatEngine loaded 33 malicious port signatures
+2026-05-19 03:08:07  INFO      portguard.notifier — Notifier initialized
+2026-05-19 03:08:07  INFO      portguard.notifier — Desktop notifications enabled
+2026-05-19 03:08:07  INFO      portguard.scanner — PortScanner initialized on host: HP-VICTUS
+2026-05-19 03:08:07  INFO      portguard.monitor — MonitorEngine initialized (interval=5s)
+2026-05-19 03:08:07  INFO      portguard — Running initial port baseline scan...
+2026-05-19 03:08:07  INFO      portguard — Baseline: 40 ports found. Running threat analysis...
+2026-05-19 03:08:07  WARNING   portguard.threat — [THREAT] Ephemeral port listening: 49668
+2026-05-19 03:08:07  WARNING   portguard.threat — [THREAT] Unexpected process on port 80: PRTG Server.exe
+2026-05-19 03:08:07  WARNING   portguard.threat — [THREAT] Ephemeral port listening: 49667
+2026-05-19 03:08:07  WARNING   portguard.threat — [THREAT] Ephemeral port listening: 49671
+2026-05-19 03:08:07  WARNING   portguard.threat — [THREAT] Ephemeral port listening: 49665
+2026-05-19 03:08:07  WARNING   portguard.threat — [THREAT] Ephemeral port listening: 49666
+2026-05-19 03:08:07  WARNING   portguard.threat — [THREAT] Ephemeral port listening: 49664
+2026-05-19 03:08:07  WARNING   portguard.threat — [THREAT] Malicious port 139 (NetBIOS) — HIGH
+2026-05-19 03:08:07  WARNING   portguard.threat — [THREAT] Malicious port 445 (SMB) — CRITICAL
+2026-05-19 03:08:07  WARNING   portguard.threat — [THREAT] Malicious port 135 (MS-RPC) — HIGH
+2026-05-19 03:08:07  CRITICAL  portguard.threat — [THREAT] Port scan pattern detected!
+2026-05-19 03:08:07  WARNING   portguard.notifier — [THR-0001] [SUSPICIOUS_EPHEMERAL_PORT] Port=49668 Process=spoolsv.exe — Port 49668 is in the ephemeral range but is actively listening. This may indicate unauthorized service or backdoor.
+2026-05-19 03:08:07  ERROR     portguard.notifier — [THR-0002] [UNEXPECTED_PROCESS] Port=80 Process=PRTG Server.exe — Unexpected process 'PRTG Server.exe' is listening on port 80. Expected: nginx, apache2, httpd, caddy, python.
+2026-05-19 03:08:07  WARNING   portguard.notifier — [THR-0003] [SUSPICIOUS_EPHEMERAL_PORT] Port=49667 Process=svchost.exe — Port 49667 is in the ephemeral range but is actively listening. This may indicate unauthorized service or backdoor.
+2026-05-19 03:08:07  WARNING   portguard.notifier — [THR-0004] [SUSPICIOUS_EPHEMERAL_PORT] Port=49671 Process=services.exe — Port 49671 is in the ephemeral range but is actively listening. This may indicate unauthorized service or backdoor.
+2026-05-19 03:08:07  WARNING   portguard.notifier — [THR-0005] [SUSPICIOUS_EPHEMERAL_PORT] Port=49665 Process=wininit.exe — Port 49665 is in the ephemeral range but is actively listening. This may indicate unauthorized service or backdoor.
+2026-05-19 03:08:07  WARNING   portguard.notifier — [THR-0006] [SUSPICIOUS_EPHEMERAL_PORT] Port=49666 Process=svchost.exe — Port 49666 is in the ephemeral range but is actively listening. This may indicate unauthorized service or backdoor.
+2026-05-19 03:08:07  WARNING   portguard.notifier — [THR-0007] [SUSPICIOUS_EPHEMERAL_PORT] Port=49664 Process=lsass.exe — Port 49664 is in the ephemeral range but is actively listening. This may indicate unauthorized service or backdoor.
+2026-05-19 03:08:07  ERROR     portguard.notifier — [THR-0008] [MALICIOUS_PORT] Port=139 Process=System — Port 139 matches known malicious signature: NetBIOS — NetBIOS session service - common attack vector
+2026-05-19 03:08:07  CRITICAL  portguard.notifier — [THR-0009] [MALICIOUS_PORT] Port=445 Process=System — Port 445 matches known malicious signature: SMB — Windows file sharing - EternalBlue/WannaCry target
+2026-05-19 03:08:07  ERROR     portguard.notifier — [THR-0010] [MALICIOUS_PORT] Port=135 Process=svchost.exe — Port 135 matches known malicious signature: MS-RPC — Windows RPC - exploited by worms like Blaster
+2026-05-19 03:08:07  CRITICAL  portguard.notifier — [THR-0011] [PORT_SCAN_PATTERN] Port=None Process=None — Possible port scan detected: 3 malicious port triggers in the last 60 seconds.
+2026-05-19 03:08:07  INFO      portguard.monitor — Monitor scan loop started.
+2026-05-19 03:08:07  INFO      portguard.monitor — MonitorEngine started.
+2026-05-19 03:08:07  INFO      portguard.monitor — Baseline scan: 40 ports found.
+2026-05-19 03:08:08  INFO      portguard — Dashboard available at http://localhost:5000
+2026-05-19 03:08:08  INFO      portguard — PortGuard is running. Press Ctrl+C to stop.
+2026-05-19 03:08:08  INFO      werkzeug — [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.36.97.40:5000
+2026-05-19 03:08:08  INFO      werkzeug — [33mPress CTRL+C to quit[0m
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 49664/TCP (lsass.exe)
+2026-05-19 03:08:12  WARNING   portguard.threat — [THREAT] Ephemeral port listening: 49664
+2026-05-19 03:08:12  WARNING   portguard.notifier — [THR-0012] [SUSPICIOUS_EPHEMERAL_PORT] Port=49664 Process=lsass.exe — Port 49664 is in the ephemeral range but is actively listening. This may indicate unauthorized service or backdoor.
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 49665/TCP (wininit.exe)
+2026-05-19 03:08:12  WARNING   portguard.threat — [THREAT] Ephemeral port listening: 49665
+2026-05-19 03:08:12  WARNING   portguard.notifier — [THR-0013] [SUSPICIOUS_EPHEMERAL_PORT] Port=49665 Process=wininit.exe — Port 49665 is in the ephemeral range but is actively listening. This may indicate unauthorized service or backdoor.
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 49666/TCP (svchost.exe)
+2026-05-19 03:08:12  WARNING   portguard.threat — [THREAT] Ephemeral port listening: 49666
+2026-05-19 03:08:12  WARNING   portguard.notifier — [THR-0014] [SUSPICIOUS_EPHEMERAL_PORT] Port=49666 Process=svchost.exe — Port 49666 is in the ephemeral range but is actively listening. This may indicate unauthorized service or backdoor.
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 49667/TCP (svchost.exe)
+2026-05-19 03:08:12  WARNING   portguard.threat — [THREAT] Ephemeral port listening: 49667
+2026-05-19 03:08:12  WARNING   portguard.notifier — [THR-0015] [SUSPICIOUS_EPHEMERAL_PORT] Port=49667 Process=svchost.exe — Port 49667 is in the ephemeral range but is actively listening. This may indicate unauthorized service or backdoor.
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 49668/TCP (spoolsv.exe)
+2026-05-19 03:08:12  WARNING   portguard.threat — [THREAT] Ephemeral port listening: 49668
+2026-05-19 03:08:12  WARNING   portguard.notifier — [THR-0016] [SUSPICIOUS_EPHEMERAL_PORT] Port=49668 Process=spoolsv.exe — Port 49668 is in the ephemeral range but is actively listening. This may indicate unauthorized service or backdoor.
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 10757/TCP (brave.exe)
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 49670/TCP (DCIService.exe)
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 49671/TCP (services.exe)
+2026-05-19 03:08:12  WARNING   portguard.threat — [THREAT] Ephemeral port listening: 49671
+2026-05-19 03:08:12  WARNING   portguard.notifier — [THR-0017] [SUSPICIOUS_EPHEMERAL_PORT] Port=49671 Process=services.exe — Port 49671 is in the ephemeral range but is actively listening. This may indicate unauthorized service or backdoor.
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 23560/TCP (PRTG Server.exe)
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 49414/TCP (svchost.exe)
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 5000/TCP (python.exe)
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 139/TCP (System)
+2026-05-19 03:08:12  WARNING   portguard.threat — [THREAT] Malicious port 139 (NetBIOS) — HIGH
+2026-05-19 03:08:12  ERROR     portguard.notifier — [THR-0018] [MALICIOUS_PORT] Port=139 Process=System — Port 139 matches known malicious signature: NetBIOS — NetBIOS session service - common attack vector
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 49669/TCP (DCIService.exe)
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 135/TCP (svchost.exe)
+2026-05-19 03:08:12  WARNING   portguard.threat — [THREAT] Malicious port 135 (MS-RPC) — HIGH
+2026-05-19 03:08:12  ERROR     portguard.notifier — [THR-0019] [MALICIOUS_PORT] Port=135 Process=svchost.exe — Port 135 matches known malicious signature: MS-RPC — Windows RPC - exploited by worms like Blaster
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 902/TCP (vmware-authd.exe)
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 1679/TCP (brave.exe)
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 912/TCP (vmware-authd.exe)
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 50060/TCP (brave.exe)
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 8085/TCP (PRTG Server.exe)
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 8733/TCP (System)
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 9007/TCP (System)
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 5040/TCP (svchost.exe)
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 17076/TCP (ChatGPT.exe)
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 53562/TCP (brave.exe)
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 445/TCP (System)
+2026-05-19 03:08:12  WARNING   portguard.threat — [THREAT] Malicious port 445 (SMB) — CRITICAL
+2026-05-19 03:08:12  CRITICAL  portguard.notifier — [THR-0020] [MALICIOUS_PORT] Port=445 Process=System — Port 445 matches known malicious signature: SMB — Windows file sharing - EternalBlue/WannaCry target
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 54334/TCP (brave.exe)
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 10308/TCP (brave.exe)
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 27592/TCP (brave.exe)
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 3918/TCP (PRTG Probe.exe)
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 6991/TCP (DCIService.exe)
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 80/TCP (PRTG Server.exe)
+2026-05-19 03:08:12  WARNING   portguard.threat — [THREAT] Unexpected process on port 80: PRTG Server.exe
+2026-05-19 03:08:12  ERROR     portguard.notifier — [THR-0021] [UNEXPECTED_PROCESS] Port=80 Process=PRTG Server.exe — Unexpected process 'PRTG Server.exe' is listening on port 80. Expected: nginx, apache2, httpd, caddy, python.
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 26842/TCP (alg.exe)
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 55772/TCP (brave.exe)
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 2015/TCP (expressvpnd.exe)
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 37737/TCP (brave.exe)
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 22510/TCP (brave.exe)
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 5359/TCP (brave.exe)
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 19586/TCP (brave.exe)
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 7680/TCP (svchost.exe)
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 3194/TCP (brave.exe)
+2026-05-19 03:08:12  INFO      portguard.monitor — New port detected: 26494/TCP (brave.exe)
+2026-05-19 03:08:22  INFO      portguard.monitor — Port closed: 53562/TCP
+2026-05-19 03:08:32  INFO      portguard.monitor — New port detected: 46963/TCP (brave.exe)
+2026-05-19 03:08:38  INFO      portguard — [STATUS] Uptime=00:00:30 | Scans=6 | Threats=21 | Alerts=21
+2026-05-19 03:08:42  INFO      portguard.monitor — New port detected: 20504/TCP (svchost.exe)
+2026-05-19 03:08:42  INFO      portguard.monitor — New port detected: 1970/TCP (brave.exe)
+2026-05-19 03:08:42  INFO      portguard.monitor — New port detected: 64764/TCP (brave.exe)
+2026-05-19 03:08:42  INFO      portguard.monitor — New port detected: 24439/TCP (brave.exe)
+2026-05-19 03:08:48  INFO      portguard.monitor — New port detected: 57160/TCP (brave.exe)
+2026-05-19 03:08:48  INFO      portguard.monitor — New port detected: 15779/TCP (brave.exe)
+2026-05-19 03:08:48  INFO      portguard.monitor — New port detected: 52141/TCP (brave.exe)
+2026-05-19 03:08:48  INFO      portguard.monitor — New port detected: 25615/TCP (brave.exe)
+2026-05-19 03:08:48  INFO      portguard.monitor — Port closed: 20504/TCP
+2026-05-19 03:08:48  INFO      portguard.monitor — Port closed: 1970/TCP
+2026-05-19 03:08:48  INFO      portguard.monitor — Port closed: 24439/TCP
+2026-05-19 03:08:56  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:08:56] "GET / HTTP/1.1" 200 -
+2026-05-19 03:08:58  INFO      portguard.monitor — New port detected: 57318/TCP (brave.exe)
+2026-05-19 03:08:58  INFO      portguard.monitor — New port detected: 64827/TCP (brave.exe)
+2026-05-19 03:08:58  INFO      portguard.monitor — New port detected: 28693/TCP (brave.exe)
+2026-05-19 03:08:58  INFO      portguard.monitor — New port detected: 36253/TCP (brave.exe)
+2026-05-19 03:08:58  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:08:58] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:08:58  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:08:58] "GET /api/ports HTTP/1.1" 200 -
+2026-05-19 03:08:58  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:08:58] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:08:58  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:08:58] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:08:59  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:08:59] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-19 03:09:03  INFO      portguard.monitor — New port detected: 22528/TCP (brave.exe)
+2026-05-19 03:09:03  INFO      portguard.monitor — New port detected: 13244/TCP (brave.exe)
+2026-05-19 03:09:03  INFO      portguard.monitor — Port closed: 57318/TCP
+2026-05-19 03:09:03  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:03] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:09:03  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:03] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:09:03  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:03] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:09:08  INFO      portguard.monitor — New port detected: 24321/TCP (brave.exe)
+2026-05-19 03:09:08  INFO      portguard.monitor — New port detected: 43267/TCP (brave.exe)
+2026-05-19 03:09:08  INFO      portguard.monitor — Port closed: 22528/TCP
+2026-05-19 03:09:08  INFO      portguard — [STATUS] Uptime=00:01:00 | Scans=12 | Threats=21 | Alerts=21
+2026-05-19 03:09:08  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:08] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:09:08  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:08] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:09:08  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:08] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:09:13  INFO      portguard.monitor — New port detected: 16261/TCP (brave.exe)
+2026-05-19 03:09:13  INFO      portguard.monitor — New port detected: 32414/TCP (brave.exe)
+2026-05-19 03:09:13  INFO      portguard.monitor — Port closed: 24321/TCP
+2026-05-19 03:09:13  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:13] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:09:13  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:13] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:09:13  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:13] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:09:18  INFO      portguard.monitor — New port detected: 9819/TCP (brave.exe)
+2026-05-19 03:09:18  INFO      portguard.monitor — Port closed: 32414/TCP
+2026-05-19 03:09:18  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:18] "GET /api/ports HTTP/1.1" 200 -
+2026-05-19 03:09:18  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:18] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:09:18  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:18] "GET /api/ports HTTP/1.1" 200 -
+2026-05-19 03:09:22  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:22] "GET /api/ports HTTP/1.1" 200 -
+2026-05-19 03:09:23  INFO      portguard.monitor — Port closed: 9819/TCP
+2026-05-19 03:09:23  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:23] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:09:23  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:23] "GET /api/ports HTTP/1.1" 200 -
+2026-05-19 03:09:24  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:24] "GET /api/ports HTTP/1.1" 200 -
+2026-05-19 03:09:27  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:27] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:09:27  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:27] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:09:28  INFO      portguard.monitor — New port detected: 44873/TCP (brave.exe)
+2026-05-19 03:09:28  INFO      portguard.monitor — Port closed: 27592/TCP
+2026-05-19 03:09:28  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:28] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:09:28  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:28] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:09:28  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:28] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:09:33  INFO      portguard.monitor — New port detected: 23503/TCP (brave.exe)
+2026-05-19 03:09:33  INFO      portguard.monitor — New port detected: 44855/TCP (brave.exe)
+2026-05-19 03:09:33  INFO      portguard.monitor — Port closed: 44873/TCP
+2026-05-19 03:09:33  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:33] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:09:33  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:33] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:09:33  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:33] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:09:33  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:33] "GET /api/logs HTTP/1.1" 200 -
+2026-05-19 03:09:38  INFO      portguard — [STATUS] Uptime=00:01:30 | Scans=17 | Threats=21 | Alerts=21
+2026-05-19 03:09:38  INFO      portguard.monitor — New port detected: 60582/TCP (brave.exe)
+2026-05-19 03:09:38  INFO      portguard.monitor — Port closed: 44855/TCP
+2026-05-19 03:09:38  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:38] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:09:43  INFO      portguard.monitor — Port closed: 60582/TCP
+2026-05-19 03:09:43  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:43] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:09:43  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:43] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:09:44  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:44] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:09:48  INFO      portguard.monitor — New port detected: 42092/TCP (brave.exe)
+2026-05-19 03:09:48  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:48] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:09:48  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:48] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:09:48  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:48] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:09:53  INFO      portguard.monitor — New port detected: 37083/TCP (brave.exe)
+2026-05-19 03:09:53  INFO      portguard.monitor — Port closed: 57160/TCP
+2026-05-19 03:09:53  INFO      portguard.monitor — Port closed: 42092/TCP
+2026-05-19 03:09:53  INFO      portguard.monitor — Port closed: 25615/TCP
+2026-05-19 03:09:53  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:53] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:09:53  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:53] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:09:53  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:53] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:09:58  INFO      portguard.monitor — New port detected: 32095/TCP (brave.exe)
+2026-05-19 03:09:58  INFO      portguard.monitor — Port closed: 37083/TCP
+2026-05-19 03:09:58  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:58] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:09:58  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:58] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:09:58  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:09:58] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:10:03  INFO      portguard.monitor — New port detected: 37276/TCP (brave.exe)
+2026-05-19 03:10:03  INFO      portguard.monitor — Port closed: 36253/TCP
+2026-05-19 03:10:03  INFO      portguard.monitor — Port closed: 32095/TCP
+2026-05-19 03:10:03  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:03] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:10:03  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:03] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:10:03  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:03] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:10:08  INFO      portguard — [STATUS] Uptime=00:02:00 | Scans=23 | Threats=21 | Alerts=21
+2026-05-19 03:10:08  INFO      portguard.monitor — New port detected: 53046/TCP (brave.exe)
+2026-05-19 03:10:08  INFO      portguard.monitor — Port closed: 37276/TCP
+2026-05-19 03:10:08  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:08] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:10:08  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:08] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:10:08  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:08] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:10:13  INFO      portguard.monitor — New port detected: 64765/TCP (brave.exe)
+2026-05-19 03:10:13  INFO      portguard.monitor — Port closed: 53046/TCP
+2026-05-19 03:10:13  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:13] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:10:13  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:13] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:10:13  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:13] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:10:18  INFO      portguard.monitor — New port detected: 27414/TCP (brave.exe)
+2026-05-19 03:10:18  INFO      portguard.monitor — Port closed: 64765/TCP
+2026-05-19 03:10:19  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:19] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:10:19  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:19] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:10:19  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:19] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:10:23  INFO      portguard.monitor — New port detected: 1728/TCP (brave.exe)
+2026-05-19 03:10:23  INFO      portguard.monitor — Port closed: 10757/TCP
+2026-05-19 03:10:23  INFO      portguard.monitor — Port closed: 27414/TCP
+2026-05-19 03:10:24  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:24] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:10:24  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:24] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:10:24  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:24] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:10:28  INFO      portguard.monitor — New port detected: 34431/TCP (brave.exe)
+2026-05-19 03:10:28  INFO      portguard.monitor — Port closed: 1728/TCP
+2026-05-19 03:10:29  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:29] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:10:29  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:29] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:10:29  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:29] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:10:33  INFO      portguard.monitor — New port detected: 34026/TCP (brave.exe)
+2026-05-19 03:10:33  INFO      portguard.monitor — Port closed: 34431/TCP
+2026-05-19 03:10:34  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:34] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:10:34  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:34] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:10:34  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:34] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:10:38  INFO      portguard — [STATUS] Uptime=00:02:30 | Scans=29 | Threats=21 | Alerts=21
+2026-05-19 03:10:38  INFO      portguard.monitor — New port detected: 29258/TCP (brave.exe)
+2026-05-19 03:10:38  INFO      portguard.monitor — Port closed: 34026/TCP
+2026-05-19 03:10:39  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:39] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:10:39  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:39] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:10:39  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:39] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:10:43  INFO      portguard.monitor — New port detected: 22463/TCP (brave.exe)
+2026-05-19 03:10:43  INFO      portguard.monitor — Port closed: 29258/TCP
+2026-05-19 03:10:43  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:43] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:10:43  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:43] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:10:43  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:43] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:10:48  INFO      portguard.monitor — New port detected: 45681/TCP (brave.exe)
+2026-05-19 03:10:48  INFO      portguard.monitor — Port closed: 22463/TCP
+2026-05-19 03:10:49  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:49] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:10:49  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:49] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:10:49  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:49] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:10:53  INFO      portguard.monitor — New port detected: 37531/TCP (brave.exe)
+2026-05-19 03:10:53  INFO      portguard.monitor — Port closed: 45681/TCP
+2026-05-19 03:10:54  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:54] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:10:54  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:54] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:10:54  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:54] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:10:58  INFO      portguard.monitor — New port detected: 22371/TCP (brave.exe)
+2026-05-19 03:10:58  INFO      portguard.monitor — Port closed: 37531/TCP
+2026-05-19 03:10:59  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:59] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:10:59  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:59] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:10:59  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:10:59] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:11:03  INFO      portguard.monitor — New port detected: 48550/TCP (brave.exe)
+2026-05-19 03:11:03  INFO      portguard.monitor — Port closed: 22371/TCP
+2026-05-19 03:11:03  INFO      portguard.monitor — Port closed: 55772/TCP
+2026-05-19 03:11:04  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:11:04] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:11:04  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:11:04] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:11:04  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:11:04] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:11:08  INFO      portguard — [STATUS] Uptime=00:03:00 | Scans=35 | Threats=21 | Alerts=21
+2026-05-19 03:11:08  INFO      portguard.monitor — New port detected: 45393/TCP (Code.exe)
+2026-05-19 03:11:08  INFO      portguard.monitor — New port detected: 40457/TCP (brave.exe)
+2026-05-19 03:11:08  INFO      portguard.monitor — New port detected: 11298/TCP (brave.exe)
+2026-05-19 03:11:08  INFO      portguard.monitor — New port detected: 3893/TCP (brave.exe)
+2026-05-19 03:11:08  INFO      portguard.monitor — Port closed: 48550/TCP
+2026-05-19 03:11:09  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:11:09] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:11:09  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:11:09] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:11:09  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:11:09] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:11:13  INFO      portguard.monitor — New port detected: 18373/TCP (Code.exe)
+2026-05-19 03:11:13  INFO      portguard.monitor — New port detected: 46490/TCP (Code.exe)
+2026-05-19 03:11:13  INFO      portguard.monitor — New port detected: 39706/TCP (brave.exe)
+2026-05-19 03:11:13  INFO      portguard.monitor — New port detected: 57596/TCP (Code.exe)
+2026-05-19 03:11:13  INFO      portguard.monitor — New port detected: 59325/TCP (Code.exe)
+2026-05-19 03:11:13  INFO      portguard.monitor — Port closed: 45393/TCP
+2026-05-19 03:11:13  INFO      portguard.monitor — Port closed: 3893/TCP
+2026-05-19 03:11:14  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:11:14] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:11:14  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:11:14] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:11:14  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:11:14] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:11:18  INFO      portguard.monitor — New port detected: 41987/TCP (Code.exe)
+2026-05-19 03:11:18  INFO      portguard.monitor — New port detected: 26499/TCP (brave.exe)
+2026-05-19 03:11:18  INFO      portguard.monitor — New port detected: 26502/TCP (Code.exe)
+2026-05-19 03:11:18  INFO      portguard.monitor — New port detected: 40200/TCP (Code.exe)
+2026-05-19 03:11:18  INFO      portguard.monitor — New port detected: 49673/TCP (Code.exe)
+2026-05-19 03:11:18  INFO      portguard.monitor — New port detected: 49674/TCP (Code.exe)
+2026-05-19 03:11:18  INFO      portguard.monitor — New port detected: 20752/TCP (Code.exe)
+2026-05-19 03:11:18  INFO      portguard.monitor — New port detected: 5523/TCP (Code.exe)
+2026-05-19 03:11:18  INFO      portguard.monitor — New port detected: 32409/TCP (Code.exe)
+2026-05-19 03:11:18  INFO      portguard.monitor — New port detected: 26777/TCP (Code.exe)
+2026-05-19 03:11:18  INFO      portguard.monitor — New port detected: 46491/TCP (Code.exe)
+2026-05-19 03:11:18  INFO      portguard.monitor — New port detected: 43548/TCP (Code.exe)
+2026-05-19 03:11:18  INFO      portguard.monitor — New port detected: 46493/TCP (Code.exe)
+2026-05-19 03:11:18  INFO      portguard.monitor — New port detected: 65452/TCP (Code.exe)
+2026-05-19 03:11:18  INFO      portguard.monitor — New port detected: 65453/TCP (DCIService.exe)
+2026-05-19 03:11:18  INFO      portguard.monitor — New port detected: 65455/TCP (DCIService.exe)
+2026-05-19 03:11:18  INFO      portguard.monitor — New port detected: 65457/TCP (DCIService.exe)
+2026-05-19 03:11:18  INFO      portguard.monitor — New port detected: 16691/TCP (Code.exe)
+2026-05-19 03:11:18  INFO      portguard.monitor — New port detected: 65459/TCP (Code.exe)
+2026-05-19 03:11:18  INFO      portguard.monitor — New port detected: 19125/TCP (Code.exe)
+2026-05-19 03:11:18  INFO      portguard.monitor — New port detected: 65460/TCP (Code.exe)
+2026-05-19 03:11:18  INFO      portguard.monitor — New port detected: 65461/TCP (Code.exe)
+2026-05-19 03:11:18  INFO      portguard.monitor — New port detected: 38074/TCP (Code.exe)
+2026-05-19 03:11:18  INFO      portguard.monitor — New port detected: 29247/TCP (Code.exe)
+2026-05-19 03:11:18  INFO      portguard.monitor — New port detected: 50379/TCP (Code.exe)
+2026-05-19 03:11:18  INFO      portguard.monitor — New port detected: 4687/TCP (Code.exe)
+2026-05-19 03:11:18  INFO      portguard.monitor — New port detected: 3152/TCP (Code.exe)
+2026-05-19 03:11:18  INFO      portguard.monitor — New port detected: 46682/TCP (Code.exe)
+2026-05-19 03:11:18  INFO      portguard.monitor — New port detected: 61663/TCP (Code.exe)
+2026-05-19 03:11:18  INFO      portguard.monitor — New port detected: 19820/TCP (Code.exe)
+2026-05-19 03:11:18  INFO      portguard.monitor — New port detected: 55790/TCP (Code.exe)
+2026-05-19 03:11:18  INFO      portguard.monitor — New port detected: 64765/TCP (Code.exe)
+2026-05-19 03:11:18  INFO      portguard.monitor — Port closed: 39706/TCP
+2026-05-19 03:11:18  INFO      portguard.monitor — Port closed: 10308/TCP
+2026-05-19 03:11:19  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:11:19] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:11:19  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:11:19] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:11:19  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:11:19] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:11:23  INFO      portguard.monitor — New port detected: 39328/TCP (Code.exe)
+2026-05-19 03:11:23  INFO      portguard.monitor — New port detected: 35878/TCP (Code.exe)
+2026-05-19 03:11:23  INFO      portguard.monitor — New port detected: 51110/TCP (Code.exe)
+2026-05-19 03:11:23  INFO      portguard.monitor — New port detected: 50123/TCP (brave.exe)
+2026-05-19 03:11:23  INFO      portguard.monitor — New port detected: 21965/TCP (Code.exe)
+2026-05-19 03:11:23  INFO      portguard.monitor — New port detected: 48176/TCP (Code.exe)
+2026-05-19 03:11:23  INFO      portguard.monitor — New port detected: 16723/TCP (Code.exe)
+2026-05-19 03:11:23  INFO      portguard.monitor — New port detected: 18099/TCP (Code.exe)
+2026-05-19 03:11:23  INFO      portguard.monitor — New port detected: 42358/TCP (Code.exe)
+2026-05-19 03:11:23  INFO      portguard.monitor — New port detected: 22460/TCP (Code.exe)
+2026-05-19 03:11:23  INFO      portguard.monitor — Port closed: 26499/TCP
+2026-05-19 03:11:23  INFO      portguard.monitor — Port closed: 26502/TCP
+2026-05-19 03:11:23  INFO      portguard.monitor — Port closed: 49673/TCP
+2026-05-19 03:11:23  INFO      portguard.monitor — Port closed: 49674/TCP
+2026-05-19 03:11:23  INFO      portguard.monitor — Port closed: 65459/TCP
+2026-05-19 03:11:23  INFO      portguard.monitor — Port closed: 65460/TCP
+2026-05-19 03:11:23  INFO      portguard.monitor — Port closed: 65461/TCP
+2026-05-19 03:11:23  INFO      portguard.monitor — Port closed: 46491/TCP
+2026-05-19 03:11:23  INFO      portguard.monitor — Port closed: 46493/TCP
+2026-05-19 03:11:24  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:11:24] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:11:24  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:11:24] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:11:24  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:11:24] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:11:28  INFO      portguard.monitor — New port detected: 19544/TCP (svchost.exe)
+2026-05-19 03:11:28  INFO      portguard.monitor — New port detected: 19542/TCP (brave.exe)
+2026-05-19 03:11:28  INFO      portguard.monitor — New port detected: 19543/TCP (svchost.exe)
+2026-05-19 03:11:28  INFO      portguard.monitor — Port closed: 50123/TCP
+2026-05-19 03:11:29  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:11:29] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:11:29  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:11:29] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:11:29  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:11:29] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:11:33  INFO      portguard.monitor — New port detected: 1976/TCP (brave.exe)
+2026-05-19 03:11:33  INFO      portguard.monitor — New port detected: 1978/TCP (Code.exe)
+2026-05-19 03:11:33  INFO      portguard.monitor — New port detected: 62197/TCP (Code.exe)
+2026-05-19 03:11:33  INFO      portguard.monitor — Port closed: 19542/TCP
+2026-05-19 03:11:34  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:11:34] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:11:34  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:11:34] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:11:34  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:11:34] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:11:38  INFO      portguard — [STATUS] Uptime=00:03:30 | Scans=41 | Threats=21 | Alerts=21
+2026-05-19 03:11:38  INFO      portguard.monitor — New port detected: 25461/TCP (brave.exe)
+2026-05-19 03:11:38  INFO      portguard.monitor — Port closed: 1976/TCP
+2026-05-19 03:11:39  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:11:39] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:11:39  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:11:39] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:11:39  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:11:39] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:11:43  INFO      portguard.monitor — New port detected: 3139/TCP (Code.exe)
+2026-05-19 03:11:43  INFO      portguard.monitor — New port detected: 31462/TCP (Code.exe)
+2026-05-19 03:11:43  INFO      portguard.monitor — New port detected: 16328/TCP (brave.exe)
+2026-05-19 03:11:43  INFO      portguard.monitor — New port detected: 9969/TCP (Code.exe)
+2026-05-19 03:11:43  INFO      portguard.monitor — New port detected: 1054/TCP (Code.exe)
+2026-05-19 03:11:43  INFO      portguard.monitor — Port closed: 1978/TCP
+2026-05-19 03:11:43  INFO      portguard.monitor — Port closed: 25461/TCP
+2026-05-19 03:11:43  INFO      portguard.monitor — Port closed: 62197/TCP
+2026-05-19 03:11:44  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:11:44] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:11:44  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:11:44] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:11:44  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:11:44] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:11:48  INFO      portguard.monitor — New port detected: 1200/TCP (Code.exe)
+2026-05-19 03:11:48  INFO      portguard.monitor — New port detected: 1282/TCP (Code.exe)
+2026-05-19 03:11:48  INFO      portguard.monitor — New port detected: 19675/TCP (brave.exe)
+2026-05-19 03:11:48  INFO      portguard.monitor — New port detected: 65509/TCP (Code.exe)
+2026-05-19 03:11:48  INFO      portguard.monitor — Port closed: 31462/TCP
+2026-05-19 03:11:48  INFO      portguard.monitor — Port closed: 16328/TCP
+2026-05-19 03:11:48  INFO      portguard.monitor — Port closed: 32409/TCP
+2026-05-19 03:11:48  INFO      portguard.monitor — Port closed: 59325/TCP
+2026-05-19 03:11:48  INFO      portguard.monitor — Port closed: 1054/TCP
+2026-05-19 03:11:53  INFO      portguard.monitor — New port detected: 64766/TCP (Code.exe)
+2026-05-19 03:11:53  INFO      portguard.monitor — Port closed: 1282/TCP
+2026-05-19 03:11:53  INFO      portguard.monitor — Port closed: 41987/TCP
+2026-05-19 03:11:53  INFO      portguard.monitor — Port closed: 40200/TCP
+2026-05-19 03:11:53  INFO      portguard.monitor — Port closed: 5523/TCP
+2026-05-19 03:11:53  INFO      portguard.monitor — Port closed: 46490/TCP
+2026-05-19 03:11:53  INFO      portguard.monitor — Port closed: 39328/TCP
+2026-05-19 03:11:53  INFO      portguard.monitor — Port closed: 35878/TCP
+2026-05-19 03:11:53  INFO      portguard.monitor — Port closed: 51110/TCP
+2026-05-19 03:11:53  INFO      portguard.monitor — Port closed: 65452/TCP
+2026-05-19 03:11:53  INFO      portguard.monitor — Port closed: 48176/TCP
+2026-05-19 03:11:53  INFO      portguard.monitor — Port closed: 18099/TCP
+2026-05-19 03:11:53  INFO      portguard.monitor — Port closed: 16691/TCP
+2026-05-19 03:11:53  INFO      portguard.monitor — Port closed: 22460/TCP
+2026-05-19 03:11:53  INFO      portguard.monitor — Port closed: 29247/TCP
+2026-05-19 03:11:53  INFO      portguard.monitor — Port closed: 18373/TCP
+2026-05-19 03:11:53  INFO      portguard.monitor — Port closed: 21965/TCP
+2026-05-19 03:11:53  INFO      portguard.monitor — Port closed: 4687/TCP
+2026-05-19 03:11:53  INFO      portguard.monitor — Port closed: 3152/TCP
+2026-05-19 03:11:53  INFO      portguard.monitor — Port closed: 16723/TCP
+2026-05-19 03:11:53  INFO      portguard.monitor — Port closed: 61663/TCP
+2026-05-19 03:11:53  INFO      portguard.monitor — Port closed: 65509/TCP
+2026-05-19 03:11:53  INFO      portguard.monitor — Port closed: 19820/TCP
+2026-05-19 03:11:53  INFO      portguard.monitor — Port closed: 9969/TCP
+2026-05-19 03:11:53  INFO      portguard.monitor — Port closed: 42358/TCP
+2026-05-19 03:11:53  INFO      portguard.monitor — Port closed: 57596/TCP
+2026-05-19 03:11:58  INFO      portguard.monitor — New port detected: 55168/TCP (Code.exe)
+2026-05-19 03:11:58  INFO      portguard.monitor — New port detected: 42891/TCP (Code.exe)
+2026-05-19 03:11:58  INFO      portguard.monitor — New port detected: 61365/TCP (Code.exe)
+2026-05-19 03:11:58  INFO      portguard.monitor — New port detected: 61574/TCP (Code.exe)
+2026-05-19 03:12:03  INFO      portguard.monitor — New port detected: 30947/TCP (Code.exe)
+2026-05-19 03:12:03  INFO      portguard.monitor — New port detected: 36228/TCP (Code.exe)
+2026-05-19 03:12:03  INFO      portguard.monitor — New port detected: 11311/TCP (Code.exe)
+2026-05-19 03:12:03  INFO      portguard.monitor — New port detected: 4511/TCP (Code.exe)
+2026-05-19 03:12:03  INFO      portguard.monitor — Port closed: 16261/TCP
+2026-05-19 03:12:03  INFO      portguard.monitor — Port closed: 64766/TCP
+2026-05-19 03:12:03  INFO      portguard.monitor — Port closed: 61365/TCP
+2026-05-19 03:12:08  INFO      portguard — [STATUS] Uptime=00:04:00 | Scans=47 | Threats=21 | Alerts=21
+2026-05-19 03:12:08  INFO      portguard.monitor — New port detected: 45863/TCP (Code.exe)
+2026-05-19 03:12:08  INFO      portguard.monitor — New port detected: 45864/TCP (Code.exe)
+2026-05-19 03:12:08  INFO      portguard.monitor — New port detected: 45865/TCP (Code.exe)
+2026-05-19 03:12:08  INFO      portguard.monitor — New port detected: 45866/TCP (Code.exe)
+2026-05-19 03:12:08  INFO      portguard.monitor — New port detected: 45867/TCP (Code.exe)
+2026-05-19 03:12:08  INFO      portguard.monitor — New port detected: 45868/TCP (Code.exe)
+2026-05-19 03:12:08  INFO      portguard.monitor — New port detected: 45869/TCP (Code.exe)
+2026-05-19 03:12:08  INFO      portguard.monitor — New port detected: 45870/TCP (Code.exe)
+2026-05-19 03:12:08  INFO      portguard.monitor — New port detected: 45871/TCP (Code.exe)
+2026-05-19 03:12:08  INFO      portguard.monitor — New port detected: 45872/TCP (Code.exe)
+2026-05-19 03:12:08  INFO      portguard.monitor — New port detected: 45873/TCP (Code.exe)
+2026-05-19 03:12:08  INFO      portguard.monitor — New port detected: 45874/TCP (Code.exe)
+2026-05-19 03:12:08  INFO      portguard.monitor — New port detected: 45875/TCP (Code.exe)
+2026-05-19 03:12:08  INFO      portguard.monitor — New port detected: 45876/TCP (Code.exe)
+2026-05-19 03:12:08  INFO      portguard.monitor — New port detected: 45877/TCP (Code.exe)
+2026-05-19 03:12:08  INFO      portguard.monitor — New port detected: 45878/TCP (Code.exe)
+2026-05-19 03:12:08  INFO      portguard.monitor — New port detected: 45879/TCP (Code.exe)
+2026-05-19 03:12:08  INFO      portguard.monitor — New port detected: 45880/TCP (Code.exe)
+2026-05-19 03:12:08  INFO      portguard.monitor — New port detected: 45881/TCP (Code.exe)
+2026-05-19 03:12:08  INFO      portguard.monitor — New port detected: 45882/TCP (Code.exe)
+2026-05-19 03:12:08  INFO      portguard.monitor — New port detected: 45883/TCP (Code.exe)
+2026-05-19 03:12:08  INFO      portguard.monitor — New port detected: 45884/TCP (Code.exe)
+2026-05-19 03:12:08  INFO      portguard.monitor — New port detected: 45885/TCP (Code.exe)
+2026-05-19 03:12:08  INFO      portguard.monitor — New port detected: 1977/TCP (Code.exe)
+2026-05-19 03:12:08  INFO      portguard.monitor — New port detected: 30945/TCP (Code.exe)
+2026-05-19 03:12:08  INFO      portguard.monitor — New port detected: 24933/TCP (Code.exe)
+2026-05-19 03:12:08  INFO      portguard.monitor — Port closed: 30947/TCP
+2026-05-19 03:12:08  INFO      portguard.monitor — Port closed: 61574/TCP
+2026-05-19 03:12:13  INFO      portguard.monitor — New port detected: 46832/TCP (brave.exe)
+2026-05-19 03:12:13  INFO      portguard.monitor — New port detected: 49299/TCP (Code.exe)
+2026-05-19 03:12:13  INFO      portguard.monitor — New port detected: 21748/TCP (Code.exe)
+2026-05-19 03:12:13  INFO      portguard.monitor — New port detected: 11416/TCP (Code.exe)
+2026-05-19 03:12:13  INFO      portguard.monitor — New port detected: 11417/TCP (Code.exe)
+2026-05-19 03:12:13  INFO      portguard.monitor — Port closed: 11298/TCP
+2026-05-19 03:12:13  INFO      portguard.monitor — Port closed: 3139/TCP
+2026-05-19 03:12:13  INFO      portguard.monitor — Port closed: 45869/TCP
+2026-05-19 03:12:18  INFO      portguard.monitor — Port closed: 11417/TCP
+2026-05-19 03:12:18  INFO      portguard.monitor — Port closed: 49299/TCP
+2026-05-19 03:12:18  INFO      portguard.monitor — Port closed: 24933/TCP
+2026-05-19 03:12:18  INFO      portguard.monitor — Port closed: 1977/TCP
+2026-05-19 03:12:22  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:12:22] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:12:23  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:12:23] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:12:23  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:12:23] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:12:23  INFO      portguard.monitor — New port detected: 5025/TCP (brave.exe)
+2026-05-19 03:12:23  INFO      portguard.monitor — New port detected: 22149/TCP (brave.exe)
+2026-05-19 03:12:23  INFO      portguard.monitor — New port detected: 31398/TCP (taskhostw.exe)
+2026-05-19 03:12:23  INFO      portguard.monitor — New port detected: 31397/TCP (Code.exe)
+2026-05-19 03:12:23  INFO      portguard.monitor — Port closed: 11311/TCP
+2026-05-19 03:12:23  INFO      portguard.monitor — Port closed: 46832/TCP
+2026-05-19 03:12:23  INFO      portguard.monitor — Port closed: 21748/TCP
+2026-05-19 03:12:23  INFO      portguard.monitor — Port closed: 19675/TCP
+2026-05-19 03:12:23  INFO      portguard.monitor — Port closed: 43548/TCP
+2026-05-19 03:12:23  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:12:23] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:12:23  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:12:23] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:12:23  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:12:23] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:12:28  INFO      portguard.monitor — New port detected: 36256/TCP (Code.exe)
+2026-05-19 03:12:28  INFO      portguard.monitor — New port detected: 55522/TCP (Code.exe)
+2026-05-19 03:12:28  INFO      portguard.monitor — New port detected: 30211/TCP (Code.exe)
+2026-05-19 03:12:28  INFO      portguard.monitor — New port detected: 2532/TCP (brave.exe)
+2026-05-19 03:12:28  INFO      portguard.monitor — New port detected: 47783/TCP (brave.exe)
+2026-05-19 03:12:28  INFO      portguard.monitor — New port detected: 51664/TCP (Code.exe)
+2026-05-19 03:12:28  INFO      portguard.monitor — New port detected: 3729/TCP (Code.exe)
+2026-05-19 03:12:28  INFO      portguard.monitor — New port detected: 52306/TCP (Code.exe)
+2026-05-19 03:12:28  INFO      portguard.monitor — New port detected: 53489/TCP (brave.exe)
+2026-05-19 03:12:28  INFO      portguard.monitor — New port detected: 40532/TCP (Code.exe)
+2026-05-19 03:12:28  INFO      portguard.monitor — New port detected: 46620/TCP (Code.exe)
+2026-05-19 03:12:28  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:12:28] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:12:28  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:12:28] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:12:28  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:12:28] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:12:33  INFO      portguard.monitor — New port detected: 32864/TCP (brave.exe)
+2026-05-19 03:12:33  INFO      portguard.monitor — New port detected: 64768/TCP (Code.exe)
+2026-05-19 03:12:33  INFO      portguard.monitor — New port detected: 64770/TCP (Code.exe)
+2026-05-19 03:12:33  INFO      portguard.monitor — New port detected: 64769/TCP (Code.exe)
+2026-05-19 03:12:33  INFO      portguard.monitor — New port detected: 64767/TCP (Code.exe)
+2026-05-19 03:12:33  INFO      portguard.monitor — Port closed: 36256/TCP
+2026-05-19 03:12:33  INFO      portguard.monitor — Port closed: 55522/TCP
+2026-05-19 03:12:33  INFO      portguard.monitor — Port closed: 30211/TCP
+2026-05-19 03:12:33  INFO      portguard.monitor — Port closed: 47783/TCP
+2026-05-19 03:12:33  INFO      portguard.monitor — Port closed: 45872/TCP
+2026-05-19 03:12:33  INFO      portguard.monitor — Port closed: 3729/TCP
+2026-05-19 03:12:33  INFO      portguard.monitor — Port closed: 52306/TCP
+2026-05-19 03:12:33  INFO      portguard.monitor — Port closed: 51664/TCP
+2026-05-19 03:12:33  INFO      portguard.monitor — Port closed: 40532/TCP
+2026-05-19 03:12:33  INFO      portguard.monitor — Port closed: 45879/TCP
+2026-05-19 03:12:33  INFO      portguard.monitor — Port closed: 45881/TCP
+2026-05-19 03:12:33  INFO      portguard.monitor — Port closed: 45882/TCP
+2026-05-19 03:12:33  INFO      portguard.monitor — Port closed: 46620/TCP
+2026-05-19 03:12:33  INFO      portguard.monitor — Port closed: 4511/TCP
+2026-05-19 03:12:33  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:12:33] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:12:33  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:12:33] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:12:33  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:12:33] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:12:37  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:12:37] "GET /api/ports HTTP/1.1" 200 -
+2026-05-19 03:12:38  INFO      portguard — [STATUS] Uptime=00:04:30 | Scans=53 | Threats=21 | Alerts=21
+2026-05-19 03:12:38  INFO      portguard.monitor — New port detected: 42613/TCP (Code.exe)
+2026-05-19 03:12:38  INFO      portguard.monitor — Port closed: 32864/TCP
+2026-05-19 03:12:38  INFO      portguard.monitor — Port closed: 64770/TCP
+2026-05-19 03:12:38  INFO      portguard.monitor — Port closed: 45884/TCP
+2026-05-19 03:12:38  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:12:38] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:12:38  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:12:38] "GET /api/ports HTTP/1.1" 200 -
+2026-05-19 03:12:42  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:12:42] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:12:43  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:12:43] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:12:43  INFO      portguard.monitor — New port detected: 6147/TCP (Code.exe)
+2026-05-19 03:12:43  INFO      portguard.monitor — New port detected: 2857/TCP (Code.exe)
+2026-05-19 03:12:43  INFO      portguard.monitor — New port detected: 10506/TCP (Code.exe)
+2026-05-19 03:12:43  INFO      portguard.monitor — New port detected: 29962/TCP (Code.exe)
+2026-05-19 03:12:43  INFO      portguard.monitor — New port detected: 6674/TCP (Code.exe)
+2026-05-19 03:12:43  INFO      portguard.monitor — New port detected: 1849/TCP (Code.exe)
+2026-05-19 03:12:43  INFO      portguard.monitor — New port detected: 45818/TCP (Code.exe)
+2026-05-19 03:12:43  INFO      portguard.monitor — Port closed: 31397/TCP
+2026-05-19 03:12:43  INFO      portguard.monitor — Port closed: 45864/TCP
+2026-05-19 03:12:43  INFO      portguard.monitor — Port closed: 45865/TCP
+2026-05-19 03:12:43  INFO      portguard.monitor — Port closed: 45866/TCP
+2026-05-19 03:12:43  INFO      portguard.monitor — Port closed: 45867/TCP
+2026-05-19 03:12:43  INFO      portguard.monitor — Port closed: 45868/TCP
+2026-05-19 03:12:43  INFO      portguard.monitor — Port closed: 45871/TCP
+2026-05-19 03:12:43  INFO      portguard.monitor — Port closed: 45873/TCP
+2026-05-19 03:12:43  INFO      portguard.monitor — Port closed: 45874/TCP
+2026-05-19 03:12:43  INFO      portguard.monitor — Port closed: 45875/TCP
+2026-05-19 03:12:43  INFO      portguard.monitor — Port closed: 45876/TCP
+2026-05-19 03:12:43  INFO      portguard.monitor — Port closed: 45877/TCP
+2026-05-19 03:12:43  INFO      portguard.monitor — Port closed: 45878/TCP
+2026-05-19 03:12:43  INFO      portguard.monitor — Port closed: 45880/TCP
+2026-05-19 03:12:43  INFO      portguard.monitor — Port closed: 11416/TCP
+2026-05-19 03:12:43  INFO      portguard.monitor — Port closed: 45883/TCP
+2026-05-19 03:12:43  INFO      portguard.monitor — Port closed: 45885/TCP
+2026-05-19 03:12:43  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:12:43] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:12:43  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:12:43] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:12:44  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:12:44] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:12:44  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:12:44] "GET /api/logs HTTP/1.1" 200 -
+2026-05-19 03:12:48  INFO      portguard.monitor — New port detected: 5720/TCP (brave.exe)
+2026-05-19 03:12:48  INFO      portguard.monitor — New port detected: 5721/TCP (Code.exe)
+2026-05-19 03:12:48  INFO      portguard.monitor — New port detected: 24850/TCP (gamingservices.exe)
+2026-05-19 03:12:48  INFO      portguard.monitor — New port detected: 24851/TCP (Code.exe)
+2026-05-19 03:12:48  INFO      portguard.monitor — Port closed: 55168/TCP
+2026-05-19 03:12:48  INFO      portguard.monitor — Port closed: 30945/TCP
+2026-05-19 03:12:48  INFO      portguard.monitor — Port closed: 15779/TCP
+2026-05-19 03:12:48  INFO      portguard.monitor — Port closed: 36228/TCP
+2026-05-19 03:12:48  INFO      portguard.monitor — Port closed: 45863/TCP
+2026-05-19 03:12:48  INFO      portguard.monitor — Port closed: 2857/TCP
+2026-05-19 03:12:48  INFO      portguard.monitor — Port closed: 52141/TCP
+2026-05-19 03:12:48  INFO      portguard.monitor — Port closed: 6674/TCP
+2026-05-19 03:12:48  INFO      portguard.monitor — Port closed: 42613/TCP
+2026-05-19 03:12:48  INFO      portguard.monitor — Port closed: 64764/TCP
+2026-05-19 03:12:48  INFO      portguard.monitor — Port closed: 64767/TCP
+2026-05-19 03:12:48  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:12:48] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:12:53  INFO      portguard.monitor — New port detected: 32111/TCP (Code.exe)
+2026-05-19 03:12:53  INFO      portguard.monitor — New port detected: 47027/TCP (brave.exe)
+2026-05-19 03:12:53  INFO      portguard.monitor — New port detected: 19087/TCP (Code.exe)
+2026-05-19 03:12:53  INFO      portguard.monitor — Port closed: 64768/TCP
+2026-05-19 03:12:53  INFO      portguard.monitor — Port closed: 64769/TCP
+2026-05-19 03:12:53  INFO      portguard.monitor — Port closed: 2532/TCP
+2026-05-19 03:12:53  INFO      portguard.monitor — Port closed: 45870/TCP
+2026-05-19 03:12:53  INFO      portguard.monitor — Port closed: 24850/TCP
+2026-05-19 03:12:53  INFO      portguard.monitor — Port closed: 5720/TCP
+2026-05-19 03:12:53  INFO      portguard.monitor — Port closed: 1849/TCP
+2026-05-19 03:12:54  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:12:54] "GET /api/status HTTP/1.1" 200 -
+2026-05-19 03:12:54  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:12:54] "GET /api/threats HTTP/1.1" 200 -
+2026-05-19 03:12:54  INFO      werkzeug — 127.0.0.1 - - [19/May/2026 03:12:54] "GET /api/threats/summary HTTP/1.1" 200 -
+2026-05-19 03:12:57  INFO      portguard — Shutdown signal received. Stopping PortGuard...
+2026-05-19 03:12:58  INFO      portguard.monitor — New port detected: 41300/TCP (brave.exe)
+2026-05-19 03:12:58  INFO      portguard.monitor — Port closed: 6147/TCP
+2026-05-19 03:12:58  INFO      portguard.monitor — Port closed: 31398/TCP
+2026-05-19 03:12:58  INFO      portguard.monitor — Port closed: 10506/TCP
+2026-05-19 03:12:58  INFO      portguard.monitor — Port closed: 29962/TCP
+2026-05-19 03:12:58  INFO      portguard.monitor — Port closed: 42891/TCP
+2026-05-19 03:12:58  INFO      portguard.monitor — Port closed: 19087/TCP
+2026-05-19 03:12:58  INFO      portguard.monitor — Port closed: 32111/TCP
+2026-05-19 03:12:58  INFO      portguard.monitor — Port closed: 24851/TCP
+2026-05-19 03:12:58  INFO      portguard.monitor — Port closed: 28693/TCP
+2026-05-19 03:12:58  INFO      portguard.monitor — Port closed: 5721/TCP
+2026-05-19 03:12:58  INFO      portguard.monitor — Port closed: 45818/TCP
+2026-05-19 03:12:58  INFO      portguard.monitor — MonitorEngine stopped.
+2026-05-19 03:12:58  INFO      portguard — Session summary — Threats detected: 20
+2026-05-19 03:12:58  INFO      portguard — By severity: {'MEDIUM': 12, 'HIGH': 6, 'CRITICAL': 2}

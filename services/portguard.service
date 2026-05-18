@@ -1,0 +1,23 @@
+[Unit]
+Description=PortGuard — Host-Based Network Security Monitor
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/portguard
+ExecStart=/usr/bin/python3 /opt/portguard/main.py --dashboard --interval 5
+Restart=on-failure
+RestartSec=5s
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=portguard
+
+# Security hardening
+PrivateTmp=true
+NoNewPrivileges=false
+ProtectHome=read-only
+
+[Install]
+WantedBy=multi-user.target
